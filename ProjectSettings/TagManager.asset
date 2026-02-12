@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Anchor
   - Alien
+  - hammer
   layers:
   - Default
   - TransparentFX
