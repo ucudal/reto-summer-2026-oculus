@@ -69,5 +69,15 @@ public class AlienJump:MonoBehaviour
         }
     }
 
+      private void OnTriggerEnter(Collider other)
+    {
+        if(other.gameObject.tag == "hammer" && popState>0)
+        {
+            popState = 0;
+            transform.position = startPos;
+        
+        }
+    }
+
    
 }
