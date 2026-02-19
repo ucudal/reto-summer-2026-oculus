@@ -18,4 +18,8 @@ else
 {
 timeLeft = 0; 
 timerText.text = "0"; 
-Debug.Log("¡Tiempo terminado!"); 
+Debug.Log("¡Tiempo terminado!");
+// Llamar a función para terminar el juego
+}
+}
+}
