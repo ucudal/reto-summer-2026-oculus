@@ -1,18 +1,26 @@
 using UnityEngine;
-using TMPro; // Importante para controlar TextMeshPro
+using TMPro;
 
 public class Canasta : MonoBehaviour
 {
-    public TextMeshProUGUI textoMarcador; // Referencia al objeto de la UI
+    public TextMeshProUGUI textoMarcador;
     private int puntos = 0;
 
     private void OnTriggerEnter(Collider other)
     {
-        // Ajusta el Tag de tu esfera a "Finish" o el que prefieras
-        if (other.CompareTag("Player")) 
+        if (other.CompareTag("Player"))
         {
-            puntos++;
-            ActualizarInterfaz();
+            Rigidbody rb = other.GetComponent<Rigidbody>();
+
+            if (rb != null)
+            {
+                // Solo suma punto si la pelota está bajando
+                if (rb.linearVelocity.y < 0f)
+                {
+                    puntos++;
+                    ActualizarInterfaz();
+                }
+            }
         }
     }
 
